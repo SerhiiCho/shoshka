@@ -1,0 +1,21 @@
+{
+    "name": "serhii/shoshka",
+    "description": "Chat bot for telegram",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "license": "no",
+    "authors": [
+        {
+            "name": "SerhiiCho",
+            "email": "serhiicho@protonmail.com"
+        }
+    ]
+}
