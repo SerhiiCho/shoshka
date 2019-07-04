@@ -20,7 +20,7 @@ if ($new_items = $say_cheese->getNewItems()) {
         $link = $result['link'];
 
         $bot->sendMessage(getenv('BOT_CHAT_ID'), $bot->getWelcomeMessage($title, $link));
-        $cache->addNewItem($title);
+        $cache->putNewItem($title);
     }
 }
 

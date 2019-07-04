@@ -49,7 +49,7 @@ class SayCheese
     public function hasNewItem(): bool
     {
         $this->new_items = $this->getLastItems();
-        $this->old_items = $this->cache->getItems();
+        $this->old_items = $this->cache->getListOfItems();
 
         return $this->old_items !== $this->new_items['titles'];
     }

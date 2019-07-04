@@ -8,14 +8,21 @@ class Bot
 {
     public function request(string $method, ?array $params = [])
     {
+        $base_uri = $this->generateRequestUrl($params, $method);
+
+        $client = (new Client(compact('base_uri')))->request('GET');
+
+        return json_decode($client->getBody()->getContents());
+    }
+
+    private function generateRequestUrl(?array $params, string $method): string
+    {
         $token = getenv('BOT_TOKEN');
 
         $base_uri = "https://api.telegram.org/bot{$token}/{$method}";
         $base_uri .= empty($params) ? '' : '?' . http_build_query($params);
 
-        $client = (new Client(compact('base_uri')))->request('GET');
-
-        return json_decode($client->getBody()->getContents());
+        return $base_uri;
     }
 
     public function sendMessage(int $chat_id, string $text)
