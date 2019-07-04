@@ -3,3 +3,4 @@
 .vscode
 cache/titles
 vendor
+composer.lock
