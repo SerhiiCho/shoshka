@@ -23,4 +23,13 @@ class Bot
         $parse_mode = 'html';
         return $this->request('sendMessage', compact('text', 'chat_id', 'parse_mode'));
     }
+
+    public function getWelcomeMessage(string $title, string $link): string
+    {
+        return <<<TEXT
+        Привет! Я нашла новый фото отчет "{$title}" на SayCheese.
+        Вот посмотри:
+        <a href="{$link}">ПЕРЕЙТИ К АЛЬБОМУ</a>
+        TEXT;
+    }
 }

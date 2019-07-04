@@ -9,7 +9,7 @@ class SayCheese
     public $old_items;
     public $new_items;
     private $cache;
-    
+
     public function __construct(Cache $cache)
     {
         $this->cache = $cache;
