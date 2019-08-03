@@ -1,6 +1,6 @@
 <?php
 
-const TITLES_CACHE = __DIR__ . '/cache/titles';
+const TITLES_CACHE = __DIR__ . '/storage/titles';
 const APP_DIR = __DIR__;
 
 const LINK_REGEX = <<<REGEX

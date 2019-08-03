@@ -1,6 +1,7 @@
 .env
 .idea
 .vscode
-cache/titles
+storage/titles
+storage/logs.log
 vendor
 composer.lock
