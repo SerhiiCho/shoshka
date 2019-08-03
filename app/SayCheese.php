@@ -3,6 +3,7 @@
 namespace App;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class SayCheese
 {
@@ -16,11 +17,16 @@ class SayCheese
     }
 
     /** Get html string from saycheese.com.ua */
-    public function getHtml(): string
+    public function getHtml(): ?string
     {
         $client = new Client(['base_uri' => getenv('BOT_TARGET_URL')]);
 
-        return $client->request('GET')->getBody()->getContents();
+        try {
+            return $client->request('GET')->getBody()->getContents();
+        } catch (GuzzleException $e) {
+            logger()->error($e->getMessage());
+            return null;
+        }
     }
 
     /**
