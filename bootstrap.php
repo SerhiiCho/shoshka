@@ -13,11 +13,12 @@ require_once 'constants.php';
 $bot = new Bot;
 $cache = new Cache;
 $say_cheese = new SayCheese($cache);
+$new_items = $say_cheese->getNewItems();
 
-if ($new_items = $say_cheese->getNewItems()) {
+if ($new_items && !empty($new_items)) {
     foreach ($new_items as $result) {
         $title = $result['titles'];
-        $link = $result['link'];
+        $link = $result['links'];
 
         $bot->sendMessage(getenv('BOT_CHAT_ID'), $bot->getWelcomeMessage($title, $link));
         $cache->putNewItem($title);
