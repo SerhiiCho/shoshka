@@ -7,8 +7,19 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class SayCheese
 {
+    /**
+     * @var array|null $old_items
+     */
     public $old_items;
+
+    /**
+     * @var array|null $new_items
+     */
     public $new_items;
+
+    /**
+     * @var \App\Cache $cache
+     */
     private $cache;
 
     public function __construct(Cache $cache)
@@ -16,7 +27,11 @@ class SayCheese
         $this->cache = $cache;
     }
 
-    /** Get html string from saycheese.com.ua */
+    /**
+     * Get html string from saycheese.com.ua
+     *
+     * @return string|null
+     */
     public function getHtml(): ?string
     {
         $client = new Client(['base_uri' => getenv('BOT_TARGET_URL')]);
