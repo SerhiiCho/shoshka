@@ -4,7 +4,7 @@ namespace App;
 
 use Dotenv\Dotenv;
 
-final class Register
+final class AppHandler
 {
     public function registerEnvPackage(): self
     {

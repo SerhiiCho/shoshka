@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-use App\Register;
+use App\AppHandler;
 
 require_once 'vendor/autoload.php';
 require_once 'constants.php';
 
-(new Register)
+(new AppHandler)
     ->registerEnvPackage()
     ->sendMessageIfNewReports();
 
