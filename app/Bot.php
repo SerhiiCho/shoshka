@@ -35,7 +35,6 @@ class Bot
     {
         return <<<TEXT
         Привет! Я нашла новый фото отчет "{$title}" на SayCheese.
-        Вот посмотри:
         <a href="{$link}">ПЕРЕЙТИ К АЛЬБОМУ</a>
         TEXT;
     }
