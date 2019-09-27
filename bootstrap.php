@@ -20,7 +20,7 @@ if ($new_items && !empty($new_items)) {
         $title = $result['titles'];
         $link = $result['links'];
 
-        $bot->sendMessage(getenv('BOT_CHAT_ID'), $bot->getWelcomeMessage($title, $link));
+        $bot->sendMessage((int) getenv('BOT_CHAT_ID'), $bot->getWelcomeMessage($title, $link));
         $cache->putNewItem($title);
     }
 }
