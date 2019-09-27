@@ -34,7 +34,7 @@ class Bot
     public function getWelcomeMessage(string $title, string $link): string
     {
         return <<<TEXT
-        Привет! Я нашла новый фото отчет "{$title}" на SayCheese.
+        Привет! Я нашла новый фото отчет "$title" на SayCheese.
         <a href="{$link}">ПЕРЕЙТИ К АЛЬБОМУ</a>
         TEXT;
     }
