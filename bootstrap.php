@@ -8,4 +8,3 @@ require_once 'constants.php';
 (new AppHandler)
     ->registerEnvPackage()
     ->sendMessageIfNewReports();
-
