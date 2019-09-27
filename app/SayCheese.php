@@ -32,6 +32,8 @@ class SayCheese
     /**
      * Parse the page and return array with links
      * and titles.
+     *
+     * @return array
      */
     public function getLastItems(): array
     {
@@ -51,6 +53,8 @@ class SayCheese
     /**
      * If if stored items don't have one of those
      * that are came from get request to saycheese.
+     *
+     * @return bool
      */
     public function hasNewItem(): bool
     {
@@ -62,6 +66,8 @@ class SayCheese
 
     /**
      * Get new parsed item from saycheese.com.ua site.
+     *
+     * @return array|null
      */
     public function getNewItems(): ?array
     {
